@@ -1,0 +1,424 @@
+
+// =============== GOOGLE FONTS ===============
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&display=swap')
+/*=============== 1- components --> Colors , --> mixins , etc... ===============*/
+@import 'components'
+/*========== components ==========*/
+@import 'media'
+/*=============== 2- General Style ===============*/
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+a
+    text-decoration: none
+    color: #fff
+
+.container
+    height: 100%
+
+img
+    width: 100%
+
+h1,h2,h3,h4,h5,h6,p
+    font-family: "Alegreya"
+    padding: 0
+    margin: 0
+button
+    &:focus
+        outline: none !important
+
+html
+    body
+        user-select: none
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+        scroll-behavior: smooth
+        header
+            background: transparent
+            color: #fff
+            .container
+            .navbar
+                justify-content: flex-end
+                position: relative
+                .navbar-brand
+                    margin-right: auto
+                    img
+                        width: 150px
+                .navbar-toggler
+                    color: #fff
+                    font-size: 1.5rem
+                .collapse.navbar-collapse
+                    // position: absolute
+                    justify-content: flex-end
+                    align-items: center
+                    gap: 35px
+                    // top: 100%
+                    padding-top: 0
+                    width: 100%
+                    .navbar-nav
+                        gap: 15px
+                        > li
+                            > a
+                                color: #fff
+                                font-size: 1.02rem
+                                &:hover
+                                    color: $main-color
+                            > a.active
+                                color: $main-color
+                                position: relative
+                                &::before
+                                    content: ""
+                                    position: absolute
+                                    width: 100%
+                                    height: 3px
+                                    background: $main-color
+                                    top: -18px
+                                    left: 2%
+                .collapse.navbar-collapse.active
+                    display: flex
+                    justify-content: center
+                    padding: 20px
+                    text-align: center
+                    background: $main-color
+                .collapse.navbar-collapse.active
+                    .navbar-nav
+                        a.active
+                            &::before
+                                content: none !important
+                .icon
+                    padding: 0 10px
+                    font-size: 14px
+                    cursor: pointer
+                    svg
+                        color: #fff
+                .drop-down
+                    position: absolute
+                    background: $transparent-color
+                    top: calc(100% + 10px)
+                    // padding: 20px 0
+                    opacity: 0
+                    visibility: hidden
+                    // gap: 10px
+                    width: 200px
+                    overflow: hidden
+                    transition: 0.5s
+                    li
+                        padding: 10px 25px
+                        a
+                            transition: 0.5s
+                            display: block
+                        &:hover
+                            background: $drop-hover-color
+                            opacity: 1
+                            a
+                                transform: translateX(-5px)
+                                color: #fff
+                        &:not(:last-of-type)
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+                .drop-item
+                    &:hover
+                        .drop-down
+                            opacity: 0.8
+                            visibility: visible
+                            top: calc( 100%)
+            .form
+                transition: 700ms ease
+                display: none
+                position: fixed
+                width: 100vw
+                height: 100vh
+                z-index: 9999
+                background: rgba(0,0,0,0.9)
+                left: 0
+                top: 0
+                // display: flex
+                align-items: center
+                justify-content: center
+                .icon-x
+                    position: absolute
+                    top: 10px
+                    right: 20px
+                    font-size: 2.5rem
+                    opacity: 0.6
+                    cursor: pointer
+                input
+                    background: transparent
+                    color: #fff
+                    border: 0
+                    border-bottom-color: currentcolor
+                    border-bottom-style: none
+                    border-bottom-width: 0px
+                    border-bottom: 1px solid rgba(255,255,255,0.8)
+                    padding: 10px
+                    font-size: 3rem
+                    &:focus
+                        outline: none !important
+                .search-icon
+                    margin-left: -61px
+                    font-size: 3rem
+                    opacity: 0.8
+            .form.active
+                display: flex
+        header.active
+            background: #fff !important
+            .navbar-nav
+                > li
+                    > a
+                        color: $main-color !important
+                    > a.active
+                        color: #000 !important
+        main
+            position: relative
+            top: -67px
+            .welcome
+                background: url(../../assets/imgs/background.jpg)
+                height: 100vh
+                background-position: center
+                background-repeat: no-repeat
+                background-attachment: fixed
+                background-size: cover
+                color: #fff
+                position: relative
+                .welcome-content
+                    padding-top: 18%
+                    position: relative
+                    z-index: 9
+                    height: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-direction: column
+                    gap: 25px
+                    h1
+                        font-size: 4.5rem
+                        font-weight: 500
+                        letter-spacing: 2px
+                    p
+                        width: 60%
+                        font-size: 1.35rem
+                        text-align: center
+                        line-height: 2
+                    .btns
+                        display: flex
+                        gap: 20px
+                        .btn
+                            border: 2px solid transparent
+                            background: $main-color
+                            color: #fff
+                            padding: 12px 25px
+                            transition: 0.5s
+                            text-transform: capitalize
+                            font-size: 0.9rem
+                            font-weight: bold
+                            &:hover
+                                background: #fff !important
+                                color: #000
+                            &:last-of-type
+                                background: transparent
+                                border-color: #fff
+                &::before
+                    @include beforeSection
+            .whoAreWe
+                // background: $second-color
+                .whoAreWe-content
+                    .row
+                        justify-content: center
+                        align-items: center
+                        .col-content
+                            .info
+                                padding-left: 50px
+                                gap: 30px
+                                h4
+                                    font-weight: bold
+                                    font-size: 1.7rem
+                                p
+                                    line-height: 2
+                                    font-size: 1rem
+                                ul
+                                    gap: 20px
+                                    li
+                                        gap: 15px
+                                        align-items: center
+                                        .icon
+                                            border: 1px solid #ddd
+                                            width: 40px
+                                            height: 40px
+                                            border-radius: 50%
+                                            display: flex
+                                            justify-content: center
+                                            align-items: center
+                                            svg
+                                                font-size: 1.2rem
+                                                color: $main-color
+                                                font-weight: bold
+                                        p
+                                .btn
+                                    width: 150px
+            .our-location
+                background: $gray-color
+                .info
+                    padding: 0 20px 0 0 !important
+            .our-backing
+                .our-backing-content
+                    .info
+                        margin-bottom: 50px
+                        svg
+                            color: $main-color
+                            font-size: 2.3rem
+                        h2
+                            font-weight: bold
+                            font-size: 2rem
+                        p
+                            font-size: 1.1rem
+                    .row
+                        .col-content
+                            border: 1px solid $gray-color
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.14)
+                            h5,p
+                                padding: 20px 20px
+                            h5
+                                padding-bottom: 0
+                                // font-weight: 500
+                                font-size: 1.3rem
+                            p
+                                opacity: 0.5
+                                line-height: 2
+            .whoAreWe.contact
+                background: $gray-color
+                .info
+                    padding-left: 0 !important
+                    .icon
+                        background: $main-color
+                        svg
+                            color: #fff !important
+                            font-size: 1rem !important
+        footer
+            .footer-top
+                background: $transparent-color
+                .footer-top-content
+                    .row
+                        .col-content
+                            h5
+                                color: #fff
+                                margin-bottom: 30px
+                                font-size: 1.1rem
+                            p
+                                font-size: 0.9rem
+                                line-height: 2
+                                margin-bottom: 20px
+                            ul
+                                display: flex
+                                flex-direction: column
+                                gap: 10px
+                                li
+                                    align-items: center
+                                    gap: 15px
+                                    position: relative
+                                    padding: 10px 15px
+                                    font-size: 0.9rem !important
+                                    letter-spacing: -0.5px
+                                    &::before
+                                        content: ">"
+                                        position: absolute
+                                        left: 0%
+                                        font-size: 0.7rem
+                                        top: 50%
+                                        transform: translateY(-50%)
+                                    a
+                                        opacity: 0.5
+                                    svg
+                                li
+                                    &:not(:last-of-type)
+                                        &::after
+                                            position: absolute
+                                            content: ""
+                                            width: 100%
+                                            height: 1px
+                                            background: rgba(255, 255, 255, 0.1)
+                                            left: 0
+                                            bottom: 0
+                            &:last-child
+                                li
+                                    line-height: 1.7
+                                    padding-top: 0 !important
+                                    p
+                                        margin: 0
+                                    &::before
+                                        content: none
+            .footer-bottom
+                background: #353330
+                color: #fff
+                .footer-bottom-content
+                    gap: 20px
+                    justify-content: center
+                    align-items: center
+                    img
+                        width: 200px
+                    p
+                        font-size: 1rem
+                        opacity: 0.5
+                    .social
+                        opacity: 0.5
+                        align-items: center
+                        gap: 20px
+                        ul
+                            margin: 0
+                        li
+                            cursor: pointer
+                            transition: 700ms ease
+                            svg
+                                font-size: 1.5rem
+                            &:hover
+                                color: #1877F2
+                            &:nth-of-type(2)
+                                &:hover
+                                    color: #1DA1F2
+                            &:nth-of-type(3)
+                                &:hover
+                                    color: #FF0084
+                            &:nth-of-type(4)
+                                &:hover
+                                    color: #0A66C2
+        .list-fixed
+            position: fixed
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 9999
+            background: #fff
+            color: #333
+            padding: 20px 10px
+            gap: 15px
+            font-size: 1.2rem
+            border-radius: 10px 0 0 10px
+            cursor: pointer
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15)
+            svg
+                transition: 0.5s
+                &:hover
+                    color: $blue-color
+        .up
+            display: none
+            transition: 700ms ease
+            position: fixed
+            bottom: 5%
+            right: 3%
+            z-index: 99
+            background: $main-color
+            border-radius: 50%
+            svg
+                color: #fff
+            .btn
+                width: 50px
+                height: 50px
+                font-size: 1.2rem
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+        .up.active
+            display: block
+
+@import "about"
+@import "contact"

@@ -1,0 +1,73 @@
+
+/* For large devices */
+// @media only screen and (min-width: 1001px)
+
+/* For medium devices */
+// @media only screen and (min-width: 769px) and (max-width: 1199px)
+
+/* For medium and small devices */
+@media only screen and (max-width: 991px)
+    header
+        .collapse
+            position: absolute
+            top: calc(100%)
+            z-index: 9
+            a.active
+                color: $transparent-color !important
+    main
+        .whoAreWe
+            .img
+                margin-bottom: 30px
+            .info
+                padding: 0 !important
+        .whoAreWe.our-location
+            .info
+            .img
+                margin-bottom: 0 !important
+                margin-top: 30px
+        .our-backing
+            .col-content
+                margin-bottom: 30px
+        .contact
+            .info
+                margin-bottom: 30px
+    .main.contact
+        .whoAreWe.contact
+            .row
+                flex-direction: column-reverse !important
+                .form
+                    .form-group
+                        input
+                            width: calc( 50% - 10px ) !important
+                    .form-group,
+                    input,
+                    textarea
+                        width: 100% !important
+
+// // /* For small devices */
+@media only screen and (max-width: 768px)
+    header
+        .navbar-brand
+            width: 50% !important
+        .icon-x
+            padding: 0 !important
+        .form
+            input,
+            .search-icon
+                font-size: 1rem !important
+            .search-icon
+                margin-left: -6% !important
+    main
+        .welcome
+            text-align: center !important
+            h1
+                font-size: 2rem !important
+            p
+                width: 90% !important
+                font-size: 0.9rem !important
+                line-height: 2
+    footer
+        .footer-bottom
+            .footer-bottom-content
+                flex-direction: column
+                gap: 10px

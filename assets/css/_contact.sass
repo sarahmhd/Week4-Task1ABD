@@ -1,0 +1,49 @@
+.header.about
+    svg
+        color: $main-color !important
+.main.about
+    top: 0
+    .welcome
+        height: 30vh
+        .welcome-content
+            padding-top: 0
+            h1
+                font-size: 3rem
+.main.about.contact
+    .welcome-content
+        p
+            font-size: 1rem
+            display: flex
+            justify-content: center
+            gap: 14px
+            a
+                opacity: 0.5
+            a.active
+                opacity: 1
+    .whoAreWe.contact
+        background: #fff
+        .row
+            .col-content
+                .form
+                    display: flex
+                    flex-direction: column
+                    gap: 20px
+                    color: $gray-color
+                    .form-group
+                        width: 90%
+                        display: flex
+                        justify-content: space-between
+                        input
+                            width: calc( 50% - 20px )
+                    input,
+                    textarea
+                        width: 90%
+                        padding: 12px
+                        border: 1px solid #ddd
+                        color: #777
+                    input[type="submit"]
+                        width: 90px
+                        background: $main-color
+                        color: #fff
+                        font-weight: bold
+                        border-radius: 5px
